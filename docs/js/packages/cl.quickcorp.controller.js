@@ -102,32 +102,32 @@ Package('cl.quickcorp.controller', [
     component:null,
     items:[
       {
-        picture:'img/landscapes/1.jpg',
+        picture:'img/landscapes/1.JPG',
         name:'One',
         link:'#one'
       },
       {
-        picture:'img/landscapes/2.jpg',
+        picture:'img/landscapes/2.JPG',
         name:'Two',
         link:'#two'
       },
       {
-        picture:'img/landscapes/3.jpg',
+        picture:'img/landscapes/3.JPG',
         name:'Three',
         link:'#three'
       },
       {
-        picture:'img/landscapes/4.jpg',
+        picture:'img/landscapes/4.JPG',
         name:'Four',
         link:'#four'
       },
       {
-        picture:'img/landscapes/5.jpg',
+        picture:'img/landscapes/5.JPG',
         name:'Five',
         link:'#five'
       },
       {
-        picture:'img/landscapes/6.jpg',
+        picture:'img/landscapes/6.JPG',
         name:'Six',
         link:'#six'
       }
