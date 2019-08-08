@@ -1,0 +1,43 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+     <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com; img-src * 'self' data:; child-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'self' 'unsafe-inline' 'unsafe-eval';media-src *">
+  <title>QCObjects Puzzle</title>
+  <link rel="preload" as="style" type="text/css" href="css/main.css"/>
+  <link rel="preload" as="style" type="text/css" href="css/modal.css"/>
+  <link rel="preload" as="style" type="text/css" href="css/puzzle.css"/>
+  <link rel="preload" as="style" type="text/css" href="css/components/card.css"/>
+  <link rel="preload" as="style" type="text/css" href="css/components/grid.css"/>
+  <script type="text/javascript" src="https://qcobjects.dev/QCObjects.js"></script>
+  <component name="pwa" controllerClass="PWAController"></component>
+
+
+</head>
+
+<body>
+  <style>
+  @import url('css/index.css');
+  </style>
+  <noscript>
+    <!-- anchor linking to external file -->
+    <p>This page need JavaScript because it uses QCObjects (https://qcobjects.com)</p>
+  </noscript>
+<component name="modalyouwin" data-message="CONTENIDO DEL MODAL" controllerClass="ModalController" componentClass="ModalComponent"></component>
+<component name="modalyoulose" data-message="CONTENIDO DEL MODAL" controllerClass="ModalController" componentClass="ModalComponent"></component>
+<component name="modalyoulose" data-message="CONTENIDO DEL MODAL" controllerClass="ModalController" componentClass="ModalComponent"></component>
+<component name="main" controllerClass="MainController" cached="false" effectClass="FadeTransitionEffect" >
+  <routing path="" name="home"></routing>
+  <routing path="#form" name="form"></routing>
+  <routing path="#landscapelist" name="landscapelist"></routing>
+  <routing path="#puzzle" name="puzzle"></routing>
+  <routing path="#youwin" name="youwin"></routing>
+  <routing path="#gameover" name="gameover"></routing>
+</component>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>
