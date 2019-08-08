@@ -157,9 +157,18 @@ Package('cl.quickcorp.controller', [
         tplextension:CONFIG.get('tplextension'),
         templateURI:controller.itemComponentURI
       });
-      item.body.addEventListener('touchstart',function (e){
-        controller.itemTouchHandler(data);
-      }, {passive:true});
+      if (global.isTouchable()){
+        item.body.addEventListener('touchstart',function (e){
+          controller.itemTouchHandler(data);
+        }, {passive:true});
+      } else {
+        item.body.addEventListener('click',function (e){
+          controller.itemTouchHandler(data);
+        }, {passive:true});
+
+      }
+
+
       controller.component.subcomponents.push(item);
       controller.component.body.append(item.body);
     },
@@ -304,11 +313,7 @@ Package('cl.quickcorp.controller', [
       return _direction;
     },
     itemClickHandler: function (e){
-      if (!(('ontouchstart' in window)
-           || (navigator.MaxTouchPoints > 0)
-           || (navigator.msMaxTouchPoints > 0))){
-             this.itemTouchHandler(e);
-           }
+       this.itemTouchHandler(e);
     },
     itemTouchHandler: function(e) {
       var controller = this;
@@ -425,12 +430,15 @@ Package('cl.quickcorp.controller', [
           if (itemGrid.data.internalTouchPoint != nodragableIndex) {
             itemGrid.body.className = 'itemGridCropped one-edge-shadow';
 
-//            itemGrid.body.addEventListener('click', function (e){
-//              controller.itemClickHandler(e);
-//            }, false);
-            itemGrid.body.addEventListener('touchstart', function (e){
-              controller.itemTouchHandler(e);
-            }, {passive:true});
+            if (global.isTouchable()){
+                   itemGrid.body.addEventListener('touchstart', function (e){
+                     controller.itemTouchHandler(e);
+                   }, {passive:true});
+                 } else {
+                   itemGrid.body.addEventListener('click', function (e){
+                     controller.itemClickHandler(e);
+                   }, false);
+                 }
           } else {
             itemGrid.body.className = 'itemGridCroppedEmpty';
           }
@@ -529,6 +537,11 @@ Package('cl.quickcorp.controller', [
       }
     },
     _new_: function(o) {
+      global.isTouchable = function (){
+        return ('ontouchstart' in window)
+             || (navigator.MaxTouchPoints > 0)
+             || (navigator.msMaxTouchPoints > 0);
+      };
       var controller = this;
       controller.cacheStorage = new ComplexStorageCache({
                             index:'contactform',
