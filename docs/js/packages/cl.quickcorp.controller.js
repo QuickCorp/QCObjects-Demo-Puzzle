@@ -461,7 +461,7 @@ Package('cl.quickcorp.controller', [
             ctx.drawImage(backgroundImageResized, subX, subY, backgroundImageResized.width, backgroundImageResized.height, 0, 0, backgroundImageResized.width, backgroundImageResized.height);
           }
         });
-        imagePar.src = '/img/par.png';
+        imagePar.src = 'img/par.png';
 
       };
       imagePar.onload = function (){
@@ -472,7 +472,7 @@ Package('cl.quickcorp.controller', [
             CanvasTool.drawImageFilled(imagePar,canvas);
           }
         });
-        imageImpar.src = '/img/impar.png';
+        imageImpar.src = 'img/impar.png';
 
       };
       imageImpar.onload = function (){
@@ -578,7 +578,7 @@ Package('cl.quickcorp.controller', [
       return _ret_;
     },
     done: function() {
-      
+
       var controller = this;
       if (this.isRoutingSelectedName('form')){
         this.component.body.subelements('button.formstart')[0].addEventListener('touchstart',function (e){

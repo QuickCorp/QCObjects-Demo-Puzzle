@@ -16,7 +16,7 @@ CONFIG.set('tplextension','tpl.html');
 CONFIG.set('serviceWorkerURI','/sw.js'); //QCObjects will register an launch this service worker automatically to work offline
 
 //  CONFIG.set('puzzleBackgroundImage',"/img/qcobjectsbackground2000.png");
-  CONFIG.set('puzzleBackgroundImage',"/img/landscapes/1.jpg");
+  CONFIG.set('puzzleBackgroundImage',"img/landscapes/1.jpg");
 
 // PUZZLE config
 CONFIG.set('PUZZLE_WITH',document.body.clientWidth*0.7);
