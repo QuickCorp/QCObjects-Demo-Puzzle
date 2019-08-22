@@ -1,7 +1,7 @@
 {
   "puzzleTimeoutSeconds":60,
   "relativeImportPath":"js/packages/",
-  "domain":"192.168.0.16",
+  "domain":"68.183.57.232",
   "backend":{
     "routes":[
       {
