@@ -23,7 +23,7 @@
  * license document, but changing it is not allowed.
 */
 "use strict";
-const version = "0.0.1";
+const version = "0.0.2";
 const appName = "dev.qcobjects.puzzle";
 const cacheName = `qcobjects-app-${appName}-${version}`;
 self.addEventListener('install', e => {
