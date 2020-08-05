@@ -1,6 +1,7 @@
 {
   "puzzleTimeoutSeconds":60,
   "relativeImportPath":"js/packages/",
+  "devmode":"debug",
   "backend":{
     "routes":[
       {
