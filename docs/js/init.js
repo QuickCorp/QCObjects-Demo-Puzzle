@@ -2,7 +2,6 @@
 logger.debugEnabled=false;
 Component.cached=true;
 
-CONFIG.set('domain','68.183.57.232');
 CONFIG.set('relativeImportPath', 'js/packages/');
 CONFIG.set('componentsBasePath', 'templates/components/');
 CONFIG.set('delayForReady', 1); // delay to wait before executing the first ready event, it includes imports
