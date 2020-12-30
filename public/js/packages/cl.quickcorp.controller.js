@@ -11,20 +11,6 @@ Package('cl.quickcorp.controller', [
       this.component.body.innerHTML="";
     }
   }),
-  Class('ModalController',Controller,{
-    dependencies:[],
-    component:null,
-    _new_:function (o){
-      this.__new__(o);
-      var controller=this;
-      //TODO: Implement
-    },
-    done: function (){
-      var component = this.component;
-      component.body.innerHTML = component.body.innerHTML.replace('{{content}}',component.submodal.template);
-
-    }
-  }),
   Class('TimerController',Controller,{
     dependencies:[],
     component:null,
@@ -97,7 +83,7 @@ Package('cl.quickcorp.controller', [
       this.component = o.component;
     }
   }),
-  Class('LandcapeListController',Controller,{
+  Class('LandscapeListController',Controller,{
     dependencies:[],
     component:null,
     items:[
@@ -138,11 +124,6 @@ Package('cl.quickcorp.controller', [
       COMPONENT_NAME:'itemlandscape',
       TPLEXTENSION:CONFIG.get('tplextension')
     }),
-    _new_:function (o){
-      this.__new__(o);
-      var controller=this;
-      //TODO: Implement
-    },
     itemTouchHandler: function (data){
       CONFIG.set('puzzleBackgroundImage',data.picture);
       location.href='#puzzle';
@@ -157,7 +138,7 @@ Package('cl.quickcorp.controller', [
         tplextension:CONFIG.get('tplextension'),
         templateURI:controller.itemComponentURI
       });
-      if (global.isTouchable()){
+      if (FormController.isTouchable()){
         item.body.addEventListener('touchstart',function (e){
           controller.itemTouchHandler(data);
         }, {passive:true});
@@ -167,7 +148,6 @@ Package('cl.quickcorp.controller', [
         }, {passive:true});
 
       }
-
 
       controller.component.subcomponents.push(item);
       controller.component.body.append(item.body);
@@ -430,7 +410,7 @@ Package('cl.quickcorp.controller', [
           if (itemGrid.data.internalTouchPoint != nodragableIndex) {
             itemGrid.body.className = 'itemGridCropped one-edge-shadow';
 
-            if (global.isTouchable()){
+            if (FormController.isTouchable()){
                    itemGrid.body.addEventListener('touchstart', function (e){
                      controller.itemTouchHandler(e);
                    }, {passive:true});
@@ -509,121 +489,5 @@ Package('cl.quickcorp.controller', [
       this.component = o.component;
     },
     done: function() {}
-  }),
-  Class('MainController', Controller, {
-    component: null,
-    formValidatorModal:null,
-    dependencies: [],
-    selectedController: null,
-    routingControllers:{},
-    cacheStorage:null,
-    addPlayer:function (){
-      var controller = this;
-      var contactform;
-      if (controller.cacheStorage != null){
-        contactform = controller.cacheStorage.getCached('contactform');
-
-        var service = serviceLoader(New(PlayerService,{
-          data:contactform
-        })).then(
-          (successfulResponse)=>{
-            // This will show the service response as a plain text
-            console.log(successfulResponse.service.template);
-          },
-          (failedResponse)=>{
-
-          });
-
-      }
-    },
-    _new_: function(o) {
-      global.isTouchable = function (){
-        return ('ontouchstart' in window)
-             || (navigator.MaxTouchPoints > 0)
-             || (navigator.msMaxTouchPoints > 0);
-      };
-      var controller = this;
-      controller.cacheStorage = new ComplexStorageCache({
-                            index:'contactform',
-                            load:(cacheController)=>{},
-                            alternate: (cacheController)=>{}
-                            });
-      logger.debugEnabled=true;
-      controller.component = o.component;
-      controller.component = controller.component.Cast(FormField);
-      controller.component.createBindingEvents();
-    },
-    formSaveTouchHandler: function (){
-      var controller = this;
-      controller.component.executeBindings();
-      if (controller.formValidatorModal!=null){
-        if (controller.component.data.name == ''
-          || controller.component.data.email == ''
-          || controller.component.phone == ''
-        ){
-          var validationMessage = '\
-            <details> \
-                <summary>Please verify the following incorrect fields:</summary> \
-                <ul> \
-                  <li>NAME</li> \
-                  <li>EMAIL</li> \
-                  <li>PHONE</li> \
-                </ul> \
-            </details> \
-          ';
-          controller.formValidatorModal.body.subelements('.validationMessage')[0].innerHTML=validationMessage;
-          controller.formValidatorModal.modal();
-        } else {
-          controller.cacheStorage.save('contactform',controller.component.data);
-          controller.addPlayer();
-          location.href='#landscapelist';
-        }
-      }
-    },
-    isRoutingSelectedName:function (name){
-      var mainController = this;
-      var _ret_=false;
-      if (mainController.component.routingSelected.filter(function(r) {
-          return r.name == name
-        }).length > 0){
-          _ret_=true;
-        }
-      return _ret_;
-    },
-    done: function() {
-
-      var controller = this;
-      if (this.isRoutingSelectedName('form')){
-        this.component.body.subelements('button.formstart')[0].addEventListener('touchstart',function (e){
-          controller.formSaveTouchHandler();
-        }, {passive:true});
-        this.component.body.subelements('button.formstart')[0].addEventListener('click',function (e){
-          controller.formSaveTouchHandler();
-        }, {passive:true});
-        controller.formValidatorModal = New(ModalComponent,{
-          body:document.createElement('div'),
-          subcomponents:[],
-          data:{
-            content:'<div class="validationMessage"></div>'
-          }
-        });
-
-        controller.component.body.append(controller.formValidatorModal);
-      }
-
-      var mainController = this;
-      mainController.routingControllers = {
-        'puzzle':New(PuzzleController, {
-          component: mainController.component
-        })
-      };
-      for (var name in this.routingControllers){
-        if (mainController.isRoutingSelectedName(name)) {
-          mainController.selectedController = mainController.routingControllers[name];
-          mainController.selectedController.done.call(mainController);
-        }
-      }
-
-    }
   })
 ]);

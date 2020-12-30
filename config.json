@@ -1,0 +1,22 @@
+{
+  "devmode": "debug",
+  "documentRoot": "./public/",
+  "relativeImportPath": "./public/js/packages/",
+  "basePath": ".",
+  "projectPath": ".",
+  "domain": "0.0.0.0",
+  "dataPath": "./data/",
+  "private-cert-pem": "./fullchain.pem",
+  "private-key-pem": "./privkey.pem",
+  "puzzleTimeoutSeconds":60,
+  "backend":{
+    "routes":[
+      {
+        "path":"/saveplayer",
+        "microservice":"cl.quickcorp.backend.saveplayer",
+        "method":"POST",
+        "responseHeaders":{}
+      }
+    ]
+  }
+}
