@@ -11,20 +11,6 @@ Package('cl.quickcorp.controller', [
       this.component.body.innerHTML="";
     }
   }),
-  Class('ModalController',Controller,{
-    dependencies:[],
-    component:null,
-    _new_:function (o){
-      this.__new__(o);
-      var controller=this;
-      //TODO: Implement
-    },
-    done: function (){
-      var component = this.component;
-      component.body.innerHTML = component.body.innerHTML.replace('{{content}}',component.submodal.template);
-
-    }
-  }),
   Class('TimerController',Controller,{
     dependencies:[],
     component:null,
@@ -138,11 +124,6 @@ Package('cl.quickcorp.controller', [
       COMPONENT_NAME:'itemlandscape',
       TPLEXTENSION:CONFIG.get('tplextension')
     }),
-    _new_:function (o){
-      this.__new__(o);
-      var controller=this;
-      //TODO: Implement
-    },
     itemTouchHandler: function (data){
       CONFIG.set('puzzleBackgroundImage',data.picture);
       location.href='#puzzle';
@@ -167,7 +148,6 @@ Package('cl.quickcorp.controller', [
         }, {passive:true});
 
       }
-
 
       controller.component.subcomponents.push(item);
       controller.component.body.append(item.body);
