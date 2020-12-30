@@ -1,7 +1,7 @@
 {
   "devmode": "debug",
-  "documentRoot": "./public/",
-  "relativeImportPath": "./public/js/packages/",
+  "documentRoot": "./docs/",
+  "relativeImportPath": "./docs/js/packages/",
   "basePath": ".",
   "projectPath": ".",
   "domain": "0.0.0.0",
