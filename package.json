@@ -7,15 +7,23 @@
   },
   "main": "js/init.js",
   "scripts": {
-    "test": "jasmine",
     "sync": "git add . && git commit -am ",
-    "preversion": "npm i --upgrade && npm test",
-    "postversion": "git push && git push --tags && npm publish",
+    "test": "((npx eslint *.js docs/js/packages/**/*.js --fix) && (npx jasmine))",
+    "preversion": "(npm cache verify && npm test)",
+    "postversion": "git push && git push --tags",
     "start": "node app.js"
   },
   "description": ".",
+  "author": "Jean Machuca (correojean@gmail.com)",
   "license": "LGPL-3.0-or-later",
   "dependencies": {
-    "qcobjects": "latest"
+    "eslint": "^7.32.0",
+    "qcobjects": "^2.3.63",
+    "qcobjects-cli": "^2.3.33",
+    "qcobjects-sdk": "^2.3.23"
+  },
+  "devDependencies": {
+    "eslint-config-qcobjects": "^0.0.11",
+    "jasmine": "^3.9.0"
   }
 }

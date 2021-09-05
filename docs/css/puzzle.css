@@ -1,71 +1,43 @@
-* {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-}
-@viewport{
-    zoom: 1.0;
-    width: device-width;
-    user-scalable:no;
-}
-
-body {
-  -webkit-touch-callout: none;
-  /* prevent callout to copy image, etc when tap to hold */
-  -webkit-text-size-adjust: none;
-  /* prevent webkit from resizing text to fit */
-  -webkit-user-select: none;
-  /* prevent copy paste, to allow, change 'none' to 'text' */
-  background-color: #FFFFFF;
-  background-size:cover;background-repeat:no-repeat;resize:both;background-position-x:left;background-position-y: center;
-  overflow: hidden;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  text-transform: uppercase;
-  width: 100%;
-  border:none;
-}
 .source {
-font-family: monospace;
-padding: 10px;
+  font-family: monospace;
+  padding: 10px;
 }
-iframe
-   {
-      position: absolute;
-      margin:0 auto;
-      width: 100%;
-      height: 100%;
-      resize: both;
-  }
-body {
-  font-color: white;
-  color: white;
-  background-image: url('../img/backgroundblack.png');
-  overflow: hidden !important;
-  margin:0;padding:0;width: 100%;height: 100%;background-size: cover;
-}
-button{cursor:pointer;opacity: 0.8;font-family:Oxygen;font-size:medium;}
-button{
-  top:3px;
-  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 2px 0px 0px #31524d, 0px 5px 3px #999;
-}
-component[name="main"]{margin:0 auto;background-size:cover;background-repeat:no-repeat;width:100%;height:100%;padding:0;margin:0;position: absolute;top:0;left:0;bottom:0;right:0;overflow: hidden;min-width:100%;min-height:100%;resize:both;max-width: 768px;max-height: 1024px;}
 
-.btnstart {text-align: center;left: 40%;top:70%;position: absolute;color:inherit;width:40%;height:5%;background-color: black; border: 3px solid white; border-radius: 20px;z-index: 9;}
-a:hover{
-  color:white;
+iframe {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  resize: both;
 }
+
+button { cursor: pointer; opacity: 0.8; font-family: Oxygen; font-size: medium; }
+
+button {
+  top: 3px;
+  box-shadow: inset 0 1px 0 #2ab7ec, 0 2px 0 0 #31524d, 0 5px 3px #999;
+}
+
+.btnstart { text-align: center; left: 40%; top: 70%; position: absolute; color: inherit; width: 40%; height: 5%; background-color: black; border: 3px solid white; border-radius: 20px; z-index: 9; }
+
+a:hover {
+  color: white;
+}
+
 .bottom {
-  align-items: baseline;width:100%;height:100%;position: absolute;
+  align-items: baseline;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
+
 .jigsaw {
   background-image: url('../img/jigsaw-puzzle-wood-stock-photography-puzzle-wood-texture.png');
-  background-size:cover;
-  background-position:top center;
+  background-size: cover;
+  background-position: top center;
   width: 100%;
   height: 100%;
+  min-height: 800px;
 }
 
 
@@ -74,84 +46,99 @@ a:hover{
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
   /* Required to make elements draggable in old WebKit */
   -khtml-user-drag: element;
   -webkit-user-drag: element;
 }
+
 .over {
   border: 2px dashed #000;
 }
-.itemGridCropped{
+
+.itemGridCropped {
   border: dotted 0.1px transparent;
-  background-size:cover;
-  background-position:top center;
-  background-attachment:fixed;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
   cursor: pointer;
   z-index: 10;
   border-radius: 7px;
 }
+
 .one-edge-shadow {
-	-webkit-box-shadow: 0 9px 6px -6px #111;
-	   -moz-box-shadow: 0 9px 6px -6px #111;
-	        box-shadow: 0 9px 6px -6px #111;
+  -webkit-box-shadow: 0 9px 6px -6px #111;
+  -moz-box-shadow: 0 9px 6px -6px #111;
+  box-shadow: 0 9px 6px -6px #111;
 }
+
 .inner-shadow {
-   -moz-box-shadow:    inset 0 0 8px #111;
-   -webkit-box-shadow: inset 0 0 8px #111;
-   box-shadow:         inset 0 0 8px #111;
+  -moz-box-shadow: inset 0 0 8px #111;
+  -webkit-box-shadow: inset 0 0 8px #111;
+  box-shadow: inset 0 0 8px #111;
 }
-.itemGridCroppedEmpty{
-/*  background-image: radial-gradient(#fcfcfc, #edeeef,#dee3de);*/
-/*  border: solid 1px black;*/
-  background-size:cover;
-  background-position:top center;
-  background-attachment:fixed;
-  clip:rect(auto,auto,33.333vw,33.333%);
+
+.itemGridCroppedEmpty {
+  /*  background-image: radial-gradient(#fcfcfc, #edeeef,#dee3de); */
+
+  /*  border: solid 1px black; */
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  clip: rect(auto, auto, 33.333vw, 33.333%);
   z-index: 9;
   border-radius: 7px;
+  width: 100%;
 }
-.puzzle_layout{
-  background-image: radial-gradient(#fcfcfc, #edeeef,#dee3de);
+
+.puzzle_layout {
+  background-image: radial-gradient(#fcfcfc, #edeeef, #dee3de);
   display: grid;
-  background-size:cover;background-repeat:no-repeat;
-  background-attachment:fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   grid-auto-flow: row dense;
-
-  height:100%;width:100%;
-  padding:0;margin:0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   border-radius: 7px;
-
 }
-.vertical_layout{
+
+.vertical_layout {
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-columns: auto;
 }
+
 .puzzle_container {
   display: grid;
   grid-template-rows: 20% 60% 20%;
   grid-template-columns: auto;
-  margin:0 auto;
-}
-.puzzle_content{
-  margin:0 auto;
+  margin: 0 auto;
 }
 
-article.puzzle_box {
-/*    width: 80%;
-    height: 140%;*/
-    margin: 0 auto;
-    border-radius: 20px;
-    border-image: radial-gradient( #edeeef,#dee3de,#fcfcfc);
-    padding: 5px;
-    background-color: #111;
-    border: 7px solid white;
+.puzzle_content {
+  margin: 0 auto;
 }
-.puzzle_content{
-/*    margin: 0 6%;
+
+div.puzzle_box {
+  /*    width: 80%;
+    height: 140%; */
+  margin: 0 auto;
+  border-radius: 20px;
+  border-image: radial-gradient(#edeeef, #dee3de, #fcfcfc);
+  padding: 5px;
+  background-color: #111;
+  border: 7px solid white;
+}
+
+.puzzle_content {
+  /*    margin: 0 6%;
     width: 80%;
-    height: 80%;*/
+    height: 80%; */
 }
+
 /*
 component[name="puzzlegame"]{
   width:600px;
@@ -161,8 +148,9 @@ component[name="puzzlegame"]{
 */
 
 .puzzle_container * {
-  grid-column-gap:0;
+  grid-column-gap: 0;
 }
+
 .puzzle_container .btn {
   background-color: #111;
   color: white;
@@ -179,25 +167,33 @@ component[name="puzzlegame"]{
   border-radius: 9px;
 }
 
-.puzzle_container .puzzle_footer{
-    padding-left: 18%;
-    padding-top: 2%;
+.puzzle_container .puzzle_footer {
+  padding-left: 18%;
+  padding-top: 2%;
 }
 
-input, textarea {
+input,
+textarea {
   -webkit-user-select: text;  /* to allow copy paste on input and textarea */
 }
 
 #logo {
-    max-width: 350px;
-    margin: 0 auto;
-    display: flex;
+  max-width: 350px;
+  margin: 0 auto;
+  display: flex;
 }
 
 .center {
   margin: 0 auto;
 }
 
-.puzzle_container main article.puzzle_box{
+.puzzle_container div.puzzle_main div.puzzle_box {
   margin-top: 10%;
+  margin: 0 auto;
+}
+
+.puzzle_main {
+  width: 510px;
+  height: 600px;
+  margin: 0 auto;
 }

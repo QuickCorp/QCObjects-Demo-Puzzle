@@ -1,6 +1,5 @@
-#config.json
 .DS_Store
-.DS_Store
+**/.DS_Store
 # Logs
 logs
 *.log
@@ -43,6 +42,7 @@ bower_components
 build/Release
 
 # Dependency directories
+**/node_modules
 node_modules
 node_modules/
 jspm_packages/
