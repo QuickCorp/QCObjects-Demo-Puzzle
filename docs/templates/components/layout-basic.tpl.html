@@ -1,0 +1,46 @@
+<style>
+  /*
+  * Main Layout Styles
+  */
+  @import url('https://sdk.qcobjects.dev/css/basic-layout.css');
+  @import url('css/index.css');
+
+  /* uncomment the next line to apply a theme */
+  /* @import url('css/theme/cyan/style.css'); */
+</style>
+
+<header>
+</header>
+<aside>
+  <nav>
+    <span class="topnav">
+      <component name="topmenu">
+          <routing path="#page1" name="blank"></routing>
+          <routing path="#page2" name="blank"></routing>
+          <routing path="#page3" name="blank"></routing>
+          <routing path="#signup" name="blank"></routing>
+          <routing path="#signin" name="blank"></routing>
+          <routing path="#" name="topmenu"></routing>
+          <routing path="" name="topmenu"></routing>
+      </component>
+    </span>
+    <button  aria-label="nav button" role="button" tabindex="-1" class="navbtn" onclick="global.sideNavController.toggle()"></button>
+    <component name="nav" controllerClass="SideNavController"></component>
+  </nav>
+</aside>
+<main role="main">
+  <section>
+    <component name="contentblock" effectClass="MainTransitionEffect">
+
+        <routing path="#" name="contentblock"></routing>
+        <routing path="" name="contentblock"></routing>
+      </component>
+  </section>
+</main>
+<footer>
+  <component name="footer"  effectClass="MainTransitionEffect">
+      <routing path="#puzzle" name="game/puzzle_buttons" controllerClass="GameController"></routing>
+      <routing path="#" name="footer"></routing>
+      <routing path="" name="footer"></routing>
+  </component>
+</footer>

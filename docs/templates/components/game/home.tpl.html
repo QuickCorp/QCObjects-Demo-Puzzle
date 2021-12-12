@@ -1,0 +1,38 @@
+<style>
+  :host {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btnstart {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    color: inherit;
+    width: 40%;
+    padding: 1em;
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 20px;
+    z-index: 9;
+  }
+  .home_container {
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+  }
+</style>
+<div>
+  <p>QCObjects Puzzle</p>
+</div>
+<div class="jigsaw">
+  <div class="home_container">
+    <img id="thumb" alt="thumb" aria-label="thumb" src="img/thumbnailvideopuzzle.png" width="50%"/>
+    <p>&nbsp;</p>
+    <button class="btnstart" ontouchstart="location.href='#form'" onclick="location.href='#form'">
+      <p>START</p>
+    </button>
+  </div>
+  <div class="bottom"> </div>
+</div>
