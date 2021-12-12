@@ -23,8 +23,8 @@
  * license document, but changing it is not allowed.
 */
 "use strict";
-const version = "";
-const appName = "app";
+const version = "0.2.6";
+const appName = "qcobjects-puzzle";
 const cacheSufix = (Math.round(Date.now()/(1000*3600))).toString(); // 1 hour
 const cacheName = `qcobjects-app-${appName}-${version}-${cacheSufix}`;
 const start_url = "/?homescreen=1";
@@ -34,7 +34,6 @@ self.addEventListener('install', e => {
     caches.open(cacheName).then(cache => {
       return cache.addAll([`${start_url}`,
 	"/",
-	".dockerignore",
 	"CNAME",
 	"Dockerfile",
 	"LICENSE.txt",
@@ -107,6 +106,7 @@ self.addEventListener('install', e => {
 	"img/landscapes/7.JPG",
 	"img/landscapes/8.JPG",
 	"img/landscapes/9.JPG",
+	"img/loading.svg",
 	"img/logo-qcobjects-white.svg",
 	"img/logo.png",
 	"img/logo0.png",
@@ -121,9 +121,10 @@ self.addEventListener('install', e => {
 	"img/screenshots/screenshot1.webp",
 	"img/screenshots/screenshot2.png",
 	"img/screenshots/screenshot2.webp",
+	"img/thumbnailvideopuzzle.png",
 	"index.html",
-	"js/game-init.js",
 	"js/init.js",
+	"js/packages/game-init.js",
 	"js/packages/installer.js",
 	"js/packages/org.quickcorp.custom.components.js",
 	"js/packages/org.quickcorp.custom.controllers.js",
@@ -131,6 +132,9 @@ self.addEventListener('install', e => {
 	"js/packages/org.quickcorp.custom.js",
 	"js/packages/org.quickcorp.custom.models.js",
 	"js/packages/org.quickcorp.custom.views.js",
+	"js/packages/org.quickcorp.games.puzzle.controllers.game.js",
+	"js/packages/org.quickcorp.games.puzzle.controllers.landscapelist.js",
+	"js/packages/org.quickcorp.games.puzzle.controllers.timer.js",
 	"js/packages/org.quickcorp.puzzle.backend.saveplayer.js",
 	"js/packages/org.quickcorp.puzzle.components.js",
 	"js/packages/org.quickcorp.puzzle.controller.js",
@@ -138,18 +142,8 @@ self.addEventListener('install', e => {
 	"js/packages/org.quickcorp.puzzle.js",
 	"js/packages/org.quickcorp.puzzle.model.js",
 	"js/packages/org.quickcorp.puzzle.services.js",
-	"localhost-cert.pem",
-	"localhost-privkey.pem",
 	"manifest.json",
-	"package-lock.json",
-	"package.json",
 	"robots.txt",
-	"spec/support/jasmine.json",
-	"spec/testsSpec.js",
-	"templates/components/article1.tpl.html",
-	"templates/components/article2.tpl.html",
-	"templates/components/article3.tpl.html",
-	"templates/components/article4.tpl.html",
 	"templates/components/blank.tpl.html",
 	"templates/components/card.tpl.html",
 	"templates/components/contentblock.tpl.html",
@@ -162,19 +156,17 @@ self.addEventListener('install', e => {
 	"templates/components/game/landscapelist.tpl.html",
 	"templates/components/game/playerslist.tpl.html",
 	"templates/components/game/puzzle.tpl.html",
+	"templates/components/game/puzzle_buttons.tpl.html",
 	"templates/components/game/puzzlegame.tpl.html",
+	"templates/components/game/youwin.tpl.html",
 	"templates/components/grid.tpl.html",
 	"templates/components/header.tpl.html",
+	"templates/components/hero/article3.tpl.html",
 	"templates/components/hero/hero-call-to-action.tpl.html",
 	"templates/components/hero/hero-overlay.tpl.html",
 	"templates/components/hero/hero-two-column-form.tpl.html",
-	"templates/components/install-button.tpl.html",
 	"templates/components/layout-basic.tpl.html",
 	"templates/components/loading.tpl.html",
-	"templates/components/loadingfooter.tpl.html",
-	"templates/components/login-button.tpl.html",
-	"templates/components/login2.tpl.html",
-	"templates/components/loginform.tpl.html",
 	"templates/components/main.tpl.html",
 	"templates/components/modal.tpl.html",
 	"templates/components/modalyoulose.tpl.html",
@@ -185,9 +177,6 @@ self.addEventListener('install', e => {
 	"templates/components/pages/page3.tpl.html",
 	"templates/components/product.tpl.html",
 	"templates/components/profile.tpl.html",
-	"templates/components/pwa.tpl.html",
-	"templates/components/section1.tpl.html",
-	"templates/components/section2.tpl.html",
 	"templates/components/shadowed-card.tpl.html",
 	"templates/components/signin-button.tpl.html",
 	"templates/components/signup-form.tpl.html",
@@ -199,7 +188,7 @@ self.addEventListener('install', e => {
 	"templates/components/signupsuccessfulfooter.tpl.html",
 	"templates/components/splashscreen.tpl.html",
 	"templates/components/topmenu.tpl.html",
-	"templates/components/youwin.tpl.html"])
+	"templates/components/videobg.tpl.html"])
           .then(() => self.skipWaiting());
     })
   );
