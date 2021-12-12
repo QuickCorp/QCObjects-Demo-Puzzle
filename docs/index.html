@@ -3,13 +3,46 @@
 
 <head>
   <meta charset="utf-8" />
-   <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com; img-src * 'self' data:; child-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'self' 'unsafe-inline' 'unsafe-eval';media-src *">
+  <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: https://ssl.gstatic.com; img-src * 'self' data:; child-src *; style-src * 'self' 'unsafe-inline' 'unsafe-eval'; script-src * 'self' 'unsafe-inline' 'unsafe-eval'; connect-src * 'self' 'unsafe-inline' 'unsafe-eval';media-src *">
   <title>QCObjects Page Title</title>
-  <component name="pwa" controllerClass="PWAController"></component>
+  <meta name="description" content="QCObjects New App">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5">
+  <link rel="canonical" href="https://newapp.qcobjects.dev/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="QCObjects New App">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="QCObjects New App">
+  <link rel="icon" sizes="192x192" href="/img/icons/icon-192x192.png">
+  <link rel="apple-touch-icon" href="/img/icons/icon-192x192.png">
+  <meta name="msapplication-TileImage" content="/img/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="rgb(1,1,1)">
+  <meta name="theme-color" content="rgb(1,1,1)">
+  <meta property="og:title" content="QCObjects Config">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://newapp.qcobjects.dev/img/icons/icon-192x192.png">
+  <meta property="og:url" content="https://newapp.qcobjects.dev/">
+  <meta property="og:description" content="QCObjects New App">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://newapp.qcobjects.dev/">
+  <meta name="twitter:title" content="QCObjects New App">
+  <meta name="twitter:description" content="QCObjects New App">
+  <meta name="twitter:image" content="https://config.qcobjects.dev/img/icons/icon-192x192.png">
+  <meta name="twitter:creator" content="@jeanmachuca">
 </head>
 
 <body>
+  <style>
+    body {
+      background: rgb(16,13,46);
+      background: linear-gradient(90deg, rgba(16,13,46,1) 0%, rgba(38,38,87,1) 20%, rgba(29,52,59,1) 65%, rgba(28,28,45,0.9668242296918768) 96%);      
+    }
+  </style>
   <noscript>
     <!-- anchor linking to external file -->
     <p>This page needs JavaScript because it uses QCObjects (https://qcobjects.com)</p>
@@ -17,7 +50,7 @@
   <component name="layout-basic" cached=true controllerClass="MainController">
   </component>
 
-<script type="module" src="js/init.js"></script>
+  <script type="module" src="js/init.js"></script>
 
 </body>
 

@@ -1,17 +1,18 @@
 <style>
-@import url("css/puzzle.css");
-
+  @import url("css/puzzle.css");
 </style>
 <div class="puzzle_container">
   <div class="puzzle_header">
     <h2>Step 2: Play</h2>
     <p>Touch any piece around the blank</p>
-    <component name="timer" componentClass="TimerComponent" controllerClass="TimerController" template-source="none"></component>
+    <component name="timer" componentClass="TimerComponent" controllerClass="TimerController" template-source="none">
+    </component>
   </div>
   <div class="puzzle_main">
     <div class="puzzle_box inner-shadow">
       <div class="puzzle_content">
-        <component cached="true" name="loading" template-source="default" controllerClass="PuzzleGameController"></component>
+        <component cached="true" name="loading" template-source="default" controllerClass="PuzzleGameController">
+        </component>
       </div>
     </div>
     <div class="puzzle_footer">

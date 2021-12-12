@@ -185,10 +185,17 @@ Package("org.quickcorp.puzzle.controller", [
 
     },
     _new_(o) {
+      CONFIG.set("PUZZLE_WITH",Math.round(document.body.offsetWidth*0.5));
+      CONFIG.set("PUZZLE_HEIGHT",Math.round(document.body.offsetWidth*0.5));
+      
+      this.puzzleWidth = Math.round(CONFIG.get("PUZZLE_WITH"));
+      this.puzzleHeight = Math.round(CONFIG.get("PUZZLE_HEIGHT"));
       this.rows = CONFIG.get("PUZZLE_NUM_ROWS");
       this.columns = CONFIG.get("PUZZLE_NUM_COLS");
       global.set("puzzleController", this);
       this.component = o.component;
+      this.component.__parent__.shadowRoot.subelements(".puzzle_main").map(e=>e.style.width=`${Math.round(this.puzzleWidth)}px`);
+      this.component.__parent__.shadowRoot.subelements(".puzzle_main").map(e=>e.style.height=`${Math.round(this.puzzleHeight)}px`);
     },
     renderItems (puzzleWidth, puzzleHeight) {
       var controller = this;

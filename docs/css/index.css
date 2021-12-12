@@ -92,7 +92,6 @@ html,body {
 }
 
 main {
-  padding: 20px;
   padding-bottom: 20%;
 }
 
@@ -177,7 +176,7 @@ nav {
 nav > button.navbtn{
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
+  background-color: transparent !important;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -219,7 +218,6 @@ nav > span.topnav {
   left:0;
   position: fixed;
   height:70px;
-  background-color: #111;
   overflow: hidden;
 }
 
@@ -236,7 +234,6 @@ nav .topnav a {
 nav .topnav a:hover {
   background-color: rgb(49, 45, 45);
 }
-
 
 nav .topnav .login-container {
   float: right;
@@ -280,8 +277,8 @@ nav form {
 /* HEADER */
 header{
   padding-top: 80px;
-  background-size: contain;
-  background-color: #111111;
+  background-size: cover;
+  background: rgba(0, 0, 0, .25);
 }
 header div {
 /*    box-shadow: 0 2px 8px rgba(0, 0, 0, .25);*/
@@ -300,7 +297,7 @@ footer{
   bottom: 0;
   left: 0;
   padding: 1rem;
-  background: #fff7f7;
+  background: rgba(0, 0, 0, .25);
   z-index: 10;
 }
 

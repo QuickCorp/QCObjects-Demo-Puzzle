@@ -15,10 +15,8 @@ button { cursor: pointer; opacity: 0.8; font-family: Oxygen; font-size: medium; 
 
 button {
   top: 3px;
-  box-shadow: inset 0 1px 0 #2ab7ec, 0 2px 0 0 #31524d, 0 5px 3px #999;
 }
 
-.btnstart { text-align: center; left: 40%; top: 70%; position: absolute; color: inherit; width: 40%; height: 5%; background-color: black; border: 3px solid white; border-radius: 20px; z-index: 9; }
 
 a:hover {
   color: white;
@@ -112,9 +110,6 @@ a:hover {
 }
 
 .puzzle_container {
-  display: grid;
-  grid-template-rows: 20% 60% 20%;
-  grid-template-columns: auto;
   margin: 0 auto;
 }
 
@@ -193,7 +188,6 @@ textarea {
 }
 
 .puzzle_main {
-  width: 510px;
-  height: 600px;
+  display: grid;
   margin: 0 auto;
 }
