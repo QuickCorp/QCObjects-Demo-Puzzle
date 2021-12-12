@@ -9,5 +9,6 @@
   "license": "LGPL-3.0-or-later",
   "dependencies": {
     "qcobjects": "latest"
-  }
+  },
+  "version": "2.2.79"
 }
